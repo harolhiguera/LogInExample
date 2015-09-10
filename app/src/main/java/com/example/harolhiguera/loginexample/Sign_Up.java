@@ -44,7 +44,6 @@ public class Sign_Up extends AppCompatActivity {
                 c.setEmail(emailstr);
                 c.setUname(unamestr);
                 c.setPass(pass1str);
-
                 helper.insertContact(c);
 
             }
