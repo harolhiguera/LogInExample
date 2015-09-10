@@ -7,9 +7,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    DatabaseHelper helper = new DatabaseHelper(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,15 +20,22 @@ public class MainActivity extends AppCompatActivity {
 
     public void ClickMethod(View v){
         if(v.getId() == R.id.BLogin){
-            //Trnasfer the Username from the main activity to the second activity
-            //Get what is in the edit text (Username)
+
             EditText a = (EditText)findViewById(R.id.TFUsername);
-            //Convert it to string
             String str = a.getText().toString();
-            //Now the intent.. normally
-            Intent i = new Intent(MainActivity.this, Second_Screem.class);
-            i.putExtra("username", str);
-            startActivity(i);
+            EditText b = (EditText)findViewById(R.id.TFPass1);
+            String pass = b.getText().toString();
+            /* Go to the db with the username and grab the password that corresponds..if so */
+            String password = helper.searchPass(str);
+            if(pass.equals(password)) {
+                Intent i = new Intent(MainActivity.this, Second_Screem.class);
+                i.putExtra("username", str);
+                startActivity(i);
+            }
+            else{
+                Toast temp = Toast.makeText(MainActivity.this, "Username and password don't match!", Toast.LENGTH_SHORT);
+                temp.show();
+            }
         }
         if(v.getId() == R.id.BSignup){
             Intent i = new Intent(MainActivity.this, Sign_Up.class);
