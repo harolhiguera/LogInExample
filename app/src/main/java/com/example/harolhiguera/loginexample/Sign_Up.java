@@ -17,12 +17,12 @@ public class Sign_Up extends AppCompatActivity {
         setContentView(R.layout.sign_up);
     }
 
-    public void signupMethod(View v){
+    public void SignupMethod(View v){
         if(v.getId() == R.id.BSignupButton){
 
             EditText name = (EditText)findViewById(R.id.TFName);
-            EditText email = (EditText)findViewById(R.id.TFUsername);
-            EditText uname = (EditText)findViewById(R.id.TFEmail);
+            EditText email = (EditText)findViewById(R.id.TFEmail);
+            EditText uname = (EditText)findViewById(R.id.TFUsername);
             EditText pass1 = (EditText)findViewById(R.id.TFPass1);
             EditText pass2 = (EditText)findViewById(R.id.TFPass2);
 

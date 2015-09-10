@@ -78,5 +78,5 @@
         android:text="SIGN UP"
         android:id="@+id/BSignupButton"
         android:layout_gravity="center_horizontal"
-        android:onClick="signupMethod" />
+        android:onClick="SignupMethod" />
 </LinearLayout>

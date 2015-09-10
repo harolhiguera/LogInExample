@@ -26,16 +26,21 @@ public class MainActivity extends AppCompatActivity {
             EditText b = (EditText)findViewById(R.id.TFPass1);
             String pass = b.getText().toString();
             /* Go to the db with the username and grab the password that corresponds..if so */
+            String x;
+            x = "Username not Found";
             String password = helper.searchPass(str);
-            if(pass.equals(password)) {
+            if (password.equals(x)){
+                Toast temp = Toast.makeText(MainActivity.this, x, Toast.LENGTH_SHORT);
+                temp.show();
+            }else if (pass.equals(password)) {
                 Intent i = new Intent(MainActivity.this, Second_Screem.class);
                 i.putExtra("username", str);
                 startActivity(i);
-            }
-            else{
+            } else {
                 Toast temp = Toast.makeText(MainActivity.this, "Username and password don't match!", Toast.LENGTH_SHORT);
                 temp.show();
             }
+
         }
         if(v.getId() == R.id.BSignup){
             Intent i = new Intent(MainActivity.this, Sign_Up.class);
