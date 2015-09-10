@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">LogInExample</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_second__screem">Second_Screem</string>
+    <string name="empty" />
+    <string name="title_activity_sign__up">Sign_Up</string>
+</resources>
